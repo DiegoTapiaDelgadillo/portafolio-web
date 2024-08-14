@@ -1,3 +1,4 @@
+import Image from "next/image";
 interface FooterProps {
   navLinks: Array<{ to: string; text: string }>;
 }
@@ -24,21 +25,30 @@ export const Footer = ({ navLinks }: FooterProps) => {
         </p>
         <div className=" flex gap-4">
           <a href="https://github.com/DiegoTapiaDelgadillo" target="_blank">
-            <img
-              src="img/github.png"
-              alt="github icon"
-              className="w-12 h-12 hover:brightness-50 ease-in-out duration-300"
-            />
+            <figure>
+              <Image
+                src="/img/github.png"
+                alt="github icon"
+                className="w-12 h-12 hover:brightness-50 ease-in-out duration-300"
+                width={100}
+                height={100}
+              />
+            </figure>
           </a>
           <a
             href="https://www.linkedin.com/in/diego-alejandro-tapia-delgadillo-469783268/"
             target="_blank"
           >
-            <img
-              src="img/linkedin.png"
-              alt="linkedin icon"
-              className="w-12 h-12 hover:brightness-50 ease-in-out duration-300"
-            />
+            <figure>
+              <Image
+                src="/img/linkedin.png"
+                alt="linkedin icon"
+                className="w-12 h-12 hover:brightness-50 ease-in-out duration-300"
+                width={100}
+                height={100}
+              />
+            </figure>
+            <img />
           </a>
         </div>
       </div>

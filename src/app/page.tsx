@@ -8,6 +8,7 @@ import { CodeSvg } from "@/components/svg/CodeSvg";
 import ShineBorder from "@/components/shared/ShineBorder/ShineBorder";
 import { TextRevealDemo } from "@/components/shared/TextReveal";
 import { ContactForm } from "@/components/home/ContactForm";
+import Image from "next/image";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -61,7 +62,7 @@ export default function Home() {
               <h2
                 className={` text-neutral-500 py-4 text-3xl ${inter.className}`}
               >
-                I'm a web developer with a passion for creating beautiful and
+                I am a web developer with a passion for creating beautiful and
                 functional websites.
               </h2>
               <div className=" flex gap-4">
@@ -75,13 +76,11 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <figure className=" flex justify-center sm:justify-end w-full">
-              <img
-                src="/svg/OSLO-14.svg"
-                alt="Foto de perfil"
-                className="w-96 h-96"
-              />
-            </figure>
+            <div className=" flex justify-end">
+              <figure className=" relative h-96 w-96  ">
+                <Image src="/svg/OSLO-14.svg" alt="Foto de perfil" fill />
+              </figure>
+            </div>
           </div>
         </div>
       </section>
@@ -93,12 +92,12 @@ export default function Home() {
               <h2
                 className={` text-neutral-500 py-4 text-xl sm:text-3xl ${inter.className}`}
               >
-                I'm a web developer with over 1 year of experience in building
+                I am a web developer with over 1 year of experience in building
                 modern and responsive websites. I have a strong background in
                 HTML, CSS, JavaScript, and various frontend frameworks like
-                React. I'm passionate about creating user-friendly and visually
-                appealing websites that provide a great experience for users.
-                I'm always eager to learn new technologies and techniques to
+                React. I am passionate about creating user-friendly and visually
+                appealing websites that provide a great experience for users. I
+                am always eager to learn new technologies and techniques to
                 improve my skills and deliver the best possible solutions for my
                 clients.
               </h2>
@@ -134,11 +133,18 @@ export default function Home() {
           <h3 className="dark:text-white text-3xl sm:text-7xl">My Projects</h3>
           <div className=" py-8">
             <ShineBorder
-              className="relative flex h-auto w-full flex-col items-center justify-center overflow-hidden bg-transparent"
+              className="relative flex  flex-col items-center justify-center overflow-hidden bg-transparent h-auto w-auto p-1"
               color={["#fefce8", "#eab308", "#422006"]}
             >
-              <figure className="">
-                <img src="img/SM8-Mexico.png" alt="" className=" rounded-xl" />
+              <figure className="relative w-full h-full">
+                <Image
+                  src="/img/SM8-Mexico.png"
+                  alt="SM8 Mexico"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  style={{ objectFit: "contain" }}
+                />
               </figure>
             </ShineBorder>
             <div className=" pt-4">
@@ -162,11 +168,18 @@ export default function Home() {
           </div>
           <div className=" py-8">
             <ShineBorder
-              className="relative flex h-auto w-full flex-col items-center justify-center overflow-hidden bg-transparent"
+              className="relative flex h-auto w-full flex-col items-center justify-center overflow-hidden bg-transparent p-1"
               color={["#eff6ff", "#3b82f6", "#172554"]}
             >
-              <figure className="">
-                <img src="img/SM8-Espana.png" alt="" />
+              <figure className="relative w-full h-full">
+                <Image
+                  src="/img/SM8-Espana.png"
+                  alt="SM8 Spain"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  style={{ objectFit: "contain" }}
+                />
               </figure>
             </ShineBorder>
             <div className=" pt-4">
@@ -189,11 +202,18 @@ export default function Home() {
           </div>
           <div className=" py-8">
             <ShineBorder
-              className="relative flex h-auto w-full flex-col items-center justify-center overflow-hidden bg-transparent"
+              className="relative flex h-auto w-full flex-col items-center justify-center overflow-hidden bg-transparent  p-1"
               color={["#fafafa", "#71717a", "#0a0a0a"]}
             >
-              <figure className="">
-                <img src="img/SM8-Desarrollos.png" alt="" />
+              <figure className="relative w-full h-full">
+                <Image
+                  src="/img/SM8-Desarrollos.png"
+                  alt="SM8 Desarrollos"
+                  width={100}
+                  height={100}
+                  layout="responsive"
+                  style={{ objectFit: "contain" }}
+                />
               </figure>
             </ShineBorder>
             <div className=" pt-4">
@@ -253,21 +273,29 @@ export default function Home() {
                   href="https://github.com/DiegoTapiaDelgadillo"
                   target="_blank"
                 >
-                  <img
-                    src="img/github.png"
-                    alt="github icon"
-                    className="w-20 h-20 hover:brightness-50 ease-in-out duration-300"
-                  />
+                  <figure>
+                    <Image
+                      src="/img/github.png"
+                      alt="github icon"
+                      className="w-20 h-20 hover:brightness-50 ease-in-out duration-300"
+                      width={100}
+                      height={100}
+                    />
+                  </figure>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/diego-alejandro-tapia-delgadillo-469783268/"
                   target="_blank"
                 >
-                  <img
-                    src="img/linkedin.png"
-                    alt="linkedin icon"
-                    className="w-20 h-20 hover:brightness-50 ease-in-out duration-300"
-                  />
+                  <figure>
+                    <Image
+                      src="/img/linkedin.png"
+                      alt="linkedin icon"
+                      className="w-20 h-20 hover:brightness-50 ease-in-out duration-300"
+                      width={100}
+                      height={100}
+                    />
+                  </figure>
                 </a>
               </div>
             </div>
