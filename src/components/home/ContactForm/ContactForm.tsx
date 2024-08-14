@@ -1,7 +1,6 @@
 "use client";
 
 import Modal from "@/components/shared/Modal/Modal";
-import { TextReveal } from "@/components/shared/TypingAnimation";
 import { useState, useRef } from "react";
 
 export const ContactForm = () => {
@@ -16,19 +15,23 @@ export const ContactForm = () => {
     openModal();
     setMessageStatus("loading");
     try {
-      await fetch("/api/send", {
+      const response = await fetch("/api/send", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-      setMessageStatus("success");
-      setData({
-        name: "",
-        email: "",
-        message: "",
-      });
+      if (response.ok) {
+        setMessageStatus("success");
+        setData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        setMessageStatus("error");
+      }
     } catch (error) {
       setMessageStatus("error");
     }
@@ -78,18 +81,14 @@ export const ContactForm = () => {
         <>
           {messageStatus === "loading" && (
             <div className=" w-full flex items-center justify-center py-12">
-              <TextReveal
-                text="Loading..."
-                className="  text-black dark:text-white text-3xl"
-              />
+              <p className=" text-black dark:text-white text-3xl">Loading...</p>
             </div>
           )}
           {messageStatus === "success" && (
             <div className=" w-full  py-12">
-              <TextReveal
-                text="Message Send!"
-                className=" text-black dark:text-white text-3xl text-center"
-              />
+              <p className=" text-black dark:text-white text-3xl text-center">
+                Message Send!
+              </p>
               <p className=" text-neutral-500 text-center">
                 Thank you for contacting me, you will have my response as soon
                 as possible.
@@ -97,7 +96,7 @@ export const ContactForm = () => {
             </div>
           )}
           {messageStatus === "error" && (
-            <p className=" text-black dark:text-white">Error!</p>
+            <p className=" text-black dark:text-white text-center">Error!</p>
           )}
         </>
       </Modal>
