@@ -3,7 +3,7 @@ import { MoonSvg } from "@/components/svg/MoonSvg";
 import { SunSvg } from "@/components/svg/SunSvg";
 import { useEffect, useState } from "react";
 export const DarkModeButton = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);

@@ -6,7 +6,7 @@ type ModalProps = {
   children: React.ReactNode;
 };
 
-export const Modal = forwardRef(({ children }: ModalProps, ref) => {
+const Modal = forwardRef(({ children }: ModalProps, ref) => {
   const [active, setActive] = useState(false);
 
   const closeModal = () => {
@@ -40,3 +40,6 @@ export const Modal = forwardRef(({ children }: ModalProps, ref) => {
     </>
   );
 });
+
+Modal.displayName = "Modal";
+export default Modal;

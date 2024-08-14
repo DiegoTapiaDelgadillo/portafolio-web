@@ -1,6 +1,6 @@
 "use client";
 
-import { Modal } from "@/components/shared/Modal";
+import Modal from "@/components/shared/Modal/Modal";
 import { TextReveal } from "@/components/shared/TypingAnimation";
 import { useState, useRef } from "react";
 

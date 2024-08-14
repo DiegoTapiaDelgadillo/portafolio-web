@@ -48,7 +48,6 @@ export const Footer = ({ navLinks }: FooterProps) => {
                 height={100}
               />
             </figure>
-            <img />
           </a>
         </div>
       </div>
