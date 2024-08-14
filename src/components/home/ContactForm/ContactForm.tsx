@@ -24,6 +24,11 @@ export const ContactForm = () => {
         body: JSON.stringify(data),
       });
       setMessageStatus("success");
+      setData({
+        name: "",
+        email: "",
+        message: "",
+      });
     } catch (error) {
       setMessageStatus("error");
     }
@@ -40,7 +45,7 @@ export const ContactForm = () => {
       <form className=" pt-4" onSubmit={handleSubmit}>
         <input
           type="text"
-          className=" w-full bg-white dark:bg-black border-neutral-500 border rounded-xl p-4 text-white"
+          className=" w-full bg-white dark:bg-black border-neutral-500 border rounded-xl p-4 text-black dark:text-white"
           placeholder="Name"
           required
           onChange={(e) => setData({ ...data, name: e.target.value })}
@@ -48,14 +53,14 @@ export const ContactForm = () => {
         <div className=" py-4">
           <input
             type="email"
-            className=" w-full bg-white dark:bg-black border-neutral-500 border rounded-xl p-4 text-white"
+            className=" w-full bg-white dark:bg-black border-neutral-500 border rounded-xl p-4 text-black dark:text-white"
             placeholder="Email"
             required
             onChange={(e) => setData({ ...data, email: e.target.value })}
           />
         </div>
         <textarea
-          className=" w-full bg-white dark:bg-black border-neutral-500 border rounded-xl p-4 text-white"
+          className=" w-full bg-white dark:bg-black border-neutral-500 border rounded-xl p-4 text-black dark:text-white"
           placeholder="Message"
           required
           onChange={(e) => setData({ ...data, message: e.target.value })}
@@ -73,14 +78,17 @@ export const ContactForm = () => {
         <>
           {messageStatus === "loading" && (
             <div className=" w-full flex items-center justify-center py-12">
-              <TextReveal text="Loading..." className=" text-white text-3xl" />
+              <TextReveal
+                text="Loading..."
+                className="  text-black dark:text-white text-3xl"
+              />
             </div>
           )}
           {messageStatus === "success" && (
             <div className=" w-full  py-12">
               <TextReveal
                 text="Message Send!"
-                className=" text-white text-3xl text-center"
+                className=" text-black dark:text-white text-3xl text-center"
               />
               <p className=" text-neutral-500 text-center">
                 Thank you for contacting me, you will have my response as soon
@@ -88,7 +96,9 @@ export const ContactForm = () => {
               </p>
             </div>
           )}
-          {messageStatus === "error" && <p>Error!</p>}
+          {messageStatus === "error" && (
+            <p className=" text-black dark:text-white">Error!</p>
+          )}
         </>
       </Modal>
     </>

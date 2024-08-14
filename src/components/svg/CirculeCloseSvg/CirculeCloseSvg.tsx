@@ -6,7 +6,7 @@ export const CirculeCloseSvg = ({ onClick }: { onClick: () => void }) => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-12 stroke-neutral-500 hover:stroke-white cursor-pointer ease-in-out duration-300"
+      className="w-12 stroke-neutral-500 hover:stroke-black dark:hover:stroke-white cursor-pointer ease-in-out duration-300"
       onClick={onClick}
     >
       <path
