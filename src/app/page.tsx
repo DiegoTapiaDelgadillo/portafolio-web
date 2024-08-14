@@ -56,7 +56,7 @@ export default function Home() {
           <div className=" grid grid-cols-1 sm:grid-cols-2 gap-24 sm:gap-4 items-center">
             <div>
               <h3 className=" text-black dark:text-white text-7xl">
-                Hi, I'm Diego Tapia
+                Hi, I am Diego Tapia
               </h3>
               <h2
                 className={` text-neutral-500 py-4 text-3xl ${inter.className}`}
