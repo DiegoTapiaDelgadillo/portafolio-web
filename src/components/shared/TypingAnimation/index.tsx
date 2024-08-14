@@ -5,6 +5,6 @@ interface TextRevealProps {
   text: string;
 }
 
-export function TextReveal({ className, text }: TextRevealProps) {
+export async function TextReveal({ className, text }: TextRevealProps) {
   return <TypingAnimation className={className} text={text} />;
 }

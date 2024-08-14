@@ -55,10 +55,9 @@ export default function Home() {
         <div className="px-4 sm:px-8 md:px-16 lg:px-36 h-auto flex items-center py-36">
           <div className=" grid grid-cols-1 sm:grid-cols-2 gap-24 sm:gap-4 items-center">
             <div>
-              <TextReveal
-                className=" text-black dark:text-white text-7xl"
-                text="Hi, I'm Diego Tapia"
-              />
+              <h3 className=" text-black dark:text-white text-7xl">
+                Hi, I'm Diego Tapia
+              </h3>
               <h2
                 className={` text-neutral-500 py-4 text-3xl ${inter.className}`}
               >
